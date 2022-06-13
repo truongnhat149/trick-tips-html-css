@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
+    <link rel="stylesheet" href="/vendor/open-iconic-master/font/css/open-iconic-bootstrap.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <span class=""></span>
+    <span class=""></span>
+    <div id="main">
+        <div id="clickShowSuccess" class="btn btn--success">show success toast</div>
+        <div id="clickShowError" class="btn btn--danger">show error toast</div>
+    </div>
+
+    <div id="app"></div>
+    <div>
+        <!-- SUCCESS -->
+        <div id="toast">
+          
+        </div>
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    var btnShowSuccess = document.getElementById('clickShowSuccess');
+    var btnShowError = document.getElementById('clickShowError');
+
+    btnShowSuccess.addEventListener('click', function() {
+        toastSuccess();
+    });
+      
+    btnShowError.addEventListener('click', function() {
+        toastError();
+    });
+
+    function toastSuccess() {
+        toast({
+            title : 'success',
+            message : 'Were in the midst of building out a full dashboard design s',
+            type : 'success',
+            duration : 3000
+        })
+    };
+
+    function toastError(){
+        toast({
+            title : 'warning',
+            message : 'Were in the midst of building out a full dashboard design s',
+            type : 'warning',
+            duration : 3000
+        })
+    };
+
+    function toast ({
+        title = '',
+        message = '',
+        type = 'info',
+        duration = 3000
+        }) {
+        const app = document.getElementById('toast');
+        if(app) {
+            const toast = document.createElement('div');
+
+            // auto remove toast
+            const autoRemoveId = setTimeout(function () {
+                app.removeChild(toast);
+            }, duration);
+
+            // remove toast when clicked
+            toast.onclick = function(e) {
+                if (e.target.closest('.toast__close')) {
+                    app.removeChild(toast);
+                    clearTimeout(autoRemoveId);
+                }
+            }
+
+            const icons = {
+                success: 'oi oi-task icon-success' ,
+                info: 'oi oi-info icon-info',
+                warning: 'oi oi-warning icon-warning', 
+            };
+
+            const icon = icons[type];
+            const delay = (duration / 1000).toFixed(2);
+
+            toast.classList.add('toast', `toast--${type}`);
+            toast.style.animation = `slideInLeft ease .3s, fadeOut  linear 1s ${delay}s forwards`;
+            
+            toast.innerHTML = `
+                    <div class="toast__icon">
+                        <span class="${icon}"></span>
+                    </div>
+                    <div class="toast__body">
+                        <h6 class="toast__title">${title}</h6>
+                        <p class="toast__msg">${message}</p>
+                    </div>
+                    <div class="toast__close">
+                        <span class="oi oi-x"></span>
+                    </div>
+            `;
+            app.appendChild(toast);
+            
+            
+         }
+        }
+
+});
+        
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

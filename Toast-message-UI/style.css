@@ -1,0 +1,147 @@
+#main {
+   margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 12px 48px;
+    border-radius: 50px;
+    cursor: pointer;
+    
+}
+
+.btn:hover {
+    opacity: .8;
+}
+
+.btn + .btn {
+    margin-left: 16px;
+}
+
+.btn--success {
+    background-color: green;
+}
+
+.btn--warn {
+background-color: #ee8d31;
+}
+
+.btn--danger {
+background-color:#fd8721 ;
+}
+
+.btn--disabled {
+    opacity: .5 !important;
+}
+
+.btn--size-l {
+    padding: 20px 56px;
+}
+
+.btn--size-s {  
+    padding: 10px 20px;
+}
+
+
+/* TOAST MESSAGE UI */
+#toast {
+        position: fixed;
+        top: 32px;
+        right: 32px;
+}
+.toast {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 2px;
+    min-width: 400px;
+    max-width: 450px;
+    border-left: 4px solid;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.8);
+    transition: all linear .3s;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(calc(100% + 32px));
+    }   
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOut {
+     to {
+        opacity: 0;
+     }
+}
+
+.toast--success {
+    border-color: #1fa779;
+}
+
+.toast--success .icon-success {
+    border-color: #1fa779;
+    color:#1fa779;
+}
+
+.toast--warning {
+    border-color: #f0a92d;
+}
+.toast--warning .icon-warning {
+    border-color: #f0a92d;
+    color:  #f0a92d;
+}
+
+.toast--info {
+    border-color: #007bc3;
+}
+
+.toast--info .icon-info { 
+    border-color: #007bc3;
+}
+
+.toast__icon {
+    font-size: 24px;
+}
+
+
+
+.toast + .toast {
+    margin-top: 24px;
+}
+
+.toast__icon ,
+.toast__close {
+    padding: 0 16px;
+}
+
+.toast__body {  
+    flex-grow: 1;
+}
+
+.toast__close {
+    font-size: 20px;
+    color: #acadb0;
+    cursor: pointer;
+}
+
+.toast__title {
+    font-size: 16px;
+    font-weight: 600px;
+    color: #333;
+}
+
+.toast__msg {
+    font-size: 14px;
+    color: #888;
+    margin-top: 4px;
+}
+
