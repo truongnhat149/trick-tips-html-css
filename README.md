@@ -7,3 +7,4 @@
 * responsive do not use js
 * responsive navbar mobile 
 # Dialog (Modal/Popup)
+# Tabs UI
