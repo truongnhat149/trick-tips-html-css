@@ -1,0 +1,108 @@
+/* NAV */
+
+.nav__pc {
+    background-color: #333;
+    display: block;
+
+}
+
+.nav__list {
+    display: inline-flex;
+}
+
+.nav__link {
+    list-style-type: none;
+    margin: 0 16px;
+}
+
+.nav__link > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav__bars-btn {
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    display: none;
+}
+
+.nav__overlay {
+    background-color: rgba(0 , 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    animation: fadeIn linear 0.2s;
+}
+
+/* MOBILE */
+
+.nav__mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 100%;
+    background-color: rgb(255, 255, 255);
+    transform: translateX(-100%);
+    transition: all linear 0.3s;
+}
+.nav__mobile-list {
+    margin-top: 24px;
+}
+
+.nav__mobile-close {
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    font-size: 1.4rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.nav__mobile-link > a {
+    text-decoration: none;
+    color: rgb(32, 32, 32);
+    display: block;
+    padding: 8px 0;
+    font-size: 1.4rem;
+}
+
+/* input */
+#nav-mobile-input {
+    display: none;
+}
+
+.nav-input:checked ~ .nav__overlay {
+    display: block;
+}
+
+.nav-input:checked ~ .nav__mobile {
+    transform: translateX(0%);
+}
+
+/* reponsive */
+@media (max-width: 1023px) {
+    .nav__bars-btn {
+        display: block;
+    }
+
+    .nav__pc {
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
