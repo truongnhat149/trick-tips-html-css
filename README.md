@@ -8,3 +8,4 @@
 * responsive navbar mobile 
 # Dialog (Modal/Popup)
 # Tabs UI
+# Center Items
