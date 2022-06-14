@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* one way */
+
+/* .box {
+    background-color: green;
+    height: 100px;
+    text-align: center;
+}
+
+h3 {
+    line-height: 100px;
+} */
+
+
+
+/* two way */
+/* .box {
+    background-color: green;
+    height: 100px;
+    display:flex;
+}
+
+h3 {
+    margin: auto;
+} */
+
+
+
+/* three way */
+/* .box {
+    background-color: green;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h3 {
+} */
+
+/* four way */
+
+/* .box {
+    background-color: green;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;  */
+    /* space-between = căn giữa, nhưng hai mép sẽ dính sát  */
+    /* space-around = căn giữa , 2 mép cũng được căn */
+/* }
+
+h3 {
+} */
+
+/* five way */
+
+.box {
+    background-color: green;
+    height: 100px;
+    position: relative;
+}
+
+h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* six way */
+/* muốn có dấu | ngăn cách*/
+
+h3::after {
+    position: absolute;
+    content: "";
+    border-left: 3px solid #333;
+    left: -10px;
+    top: 50%;
+    height: 20px;
+    transform: translate(-50%, -50%);
+}
